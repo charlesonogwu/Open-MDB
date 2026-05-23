@@ -5,7 +5,7 @@ import { validateVend } from './validate';
 const MAX_BATCH = 500;
 
 export default {
-  async fetch(req: Request, env: Env): Promise<Response> {
+  async fetch(req: Request, env: Env, _ctx: ExecutionContext): Promise<Response> {
     const url = new URL(req.url);
 
     if (req.method === 'GET' && url.pathname === '/health') {
@@ -23,7 +23,7 @@ export default {
     return new Response('not found', { status: 404 });
   },
 
-  async scheduled(_event: ScheduledEvent, env: Env): Promise<void> {
+  async scheduled(_controller: ScheduledController, env: Env, _ctx: ExecutionContext): Promise<void> {
     await keepAlive(env);
   },
 } satisfies ExportedHandler<Env>;

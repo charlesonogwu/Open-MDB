@@ -1,4 +1,4 @@
 [flake8]
 max-line-length = 120
-extend-ignore = E203, W503, E241
+extend-ignore = E203, W503, E221, E241
 exclude = .venv, venv, __pycache__, .pytest_cache, node_modules
