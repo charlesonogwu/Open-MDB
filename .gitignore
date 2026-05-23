@@ -1,0 +1,46 @@
+# Environments and secrets
+.env
+.env.*
+!.env.example
+**/secrets/
+*.pem
+*.key
+*.crt
+
+# Node / npm
+node_modules/
+dist/
+build/
+.next/
+.turbo/
+*.log
+npm-debug.log*
+.npm/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Cloudflare Wrangler
+.wrangler/
+wrangler.toml.local
+
+# Supabase
+supabase/.temp/
+
+# Local backups / scratch
+*.bak
+*.tmp
+scratch/
+local-only/

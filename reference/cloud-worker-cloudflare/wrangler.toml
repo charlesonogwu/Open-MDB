@@ -1,0 +1,17 @@
+name = "openvend-ingestor"
+main = "src/index.ts"
+compatibility_date = "2025-10-15"
+workers_dev = true
+
+# Daily keep-alive ping to prevent Supabase free-tier auto-pause.
+# Fires at 13:00 UTC every day. Adjust if you'd rather it run off-peak
+# for your fleet (e.g., overnight in your operating timezone).
+[triggers]
+crons = ["0 13 * * *"]
+
+# Secrets are NOT defined here. Set them with:
+#   wrangler secret put SUPABASE_URL
+#   wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+#   wrangler secret put INGEST_SECRET
+#
+# Local development uses .dev.vars (gitignored). See .env.example.

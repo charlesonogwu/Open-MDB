@@ -1,0 +1,47 @@
+{
+  "_comment": "Example machine configuration for OpenVend. Fork and modify this file for your own machine, then INSERT the rows into your Supabase tables. Selection numbering follows AMS-style conventions (rows 1-2 even numbers only, rows 3+ consecutive). Adjust selections, capacities, and product assignments to match your actual machine layout.",
+
+  "machine": {
+    "id": "MACHINE-001",
+    "label": "Demo Office",
+    "location_name": "Office Building A",
+    "notes": "5-row combo machine. Rows 1-3 snacks, rows 4-5 beverages."
+  },
+
+  "slots": [
+    { "selection": "10", "capacity": 7,  "product_sku": "CHIP-001",   "retail_price_cents": 125 },
+    { "selection": "12", "capacity": 7,  "product_sku": "CHIP-002",   "retail_price_cents": 125 },
+    { "selection": "14", "capacity": 7,  "product_sku": "CHIP-003",   "retail_price_cents": 150 },
+    { "selection": "16", "capacity": 7,  "product_sku": "CHIP-001",   "retail_price_cents": 125 },
+    { "selection": "18", "capacity": 7,  "product_sku": "CHIP-002",   "retail_price_cents": 125 },
+
+    { "selection": "20", "capacity": 10, "product_sku": "CHIP-001",   "retail_price_cents": 125 },
+    { "selection": "22", "capacity": 10, "product_sku": "CHIP-003",   "retail_price_cents": 150 },
+    { "selection": "24", "capacity": 10, "product_sku": "CHIP-002",   "retail_price_cents": 125 },
+
+    { "selection": "30", "capacity": 12, "product_sku": "CANDY-001",  "retail_price_cents": 200 },
+    { "selection": "31", "capacity": 12, "product_sku": "CANDY-002",  "retail_price_cents": 200 },
+    { "selection": "32", "capacity": 12, "product_sku": "CANDY-003",  "retail_price_cents": 200 },
+    { "selection": "33", "capacity": 12, "product_sku": null,         "retail_price_cents": null },
+    { "selection": "34", "capacity": 12, "product_sku": null,         "retail_price_cents": null },
+
+    { "selection": "40", "capacity": 5,  "product_sku": "SODA-001",   "retail_price_cents": 150 },
+    { "selection": "41", "capacity": 5,  "product_sku": "SODA-002",   "retail_price_cents": 150 },
+    { "selection": "42", "capacity": 5,  "product_sku": "SODA-003",   "retail_price_cents": 150 },
+    { "selection": "43", "capacity": 5,  "product_sku": "WATER-001",  "retail_price_cents": 100 },
+    { "selection": "44", "capacity": 5,  "product_sku": "ENERGY-001", "retail_price_cents": 350 },
+    { "selection": "45", "capacity": 5,  "product_sku": "ENERGY-002", "retail_price_cents": 350 },
+
+    { "selection": "50", "capacity": 5,  "product_sku": "SODA-001",   "retail_price_cents": 150 },
+    { "selection": "51", "capacity": 5,  "product_sku": "SODA-002",   "retail_price_cents": 150 },
+    { "selection": "52", "capacity": 5,  "product_sku": "SODA-003",   "retail_price_cents": 150 }
+  ],
+
+  "_usage_notes": [
+    "1. Pick a machine_id format you want to standardize on (MACHINE-001, OFFICE-MAIN, etc.) — see docs/09-adding-more-machines.md.",
+    "2. Set the capacity for each coil to the maximum number of units that physically fit in that slot.",
+    "3. retail_price_cents is what the machine displays. The Pi listener reads the actual sale price from the MDB frame at vend time — if those drift apart, debug your machine's pricing menu, not OpenVend.",
+    "4. Leave product_sku as null for empty slots — the dashboard will show them as 'unassigned'.",
+    "5. For initial setup, generate INSERT statements with: jq -r '.slots[] | \"INSERT INTO slots (machine_id, selection, capacity, product_sku, retail_price_cents) VALUES (\\u0027MACHINE-001\\u0027, \\u0027\\(.selection)\\u0027, \\(.capacity), \\(if .product_sku then \"\\u0027\\(.product_sku)\\u0027\" else \"NULL\" end), \\(.retail_price_cents // \"NULL\"));\"' examples/machine-config.json"
+  ]
+}

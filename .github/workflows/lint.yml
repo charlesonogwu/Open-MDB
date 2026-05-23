@@ -1,0 +1,57 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  python:
+    name: Python flake8
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install flake8
+      - run: flake8 reference/pi-listener-python
+
+  typescript:
+    name: TypeScript typecheck
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - reference/cloud-worker-cloudflare
+          - reference/dashboard-nextjs
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm run typecheck
+
+  sql:
+    name: SQL parse (sqlfluff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install sqlfluff
+      - name: Parse each schema file
+        run: |
+          set -e
+          for f in supabase/*.sql; do
+            echo "Parsing $f"
+            sqlfluff parse --dialect postgres "$f" > /dev/null
+          done

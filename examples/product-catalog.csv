@@ -1,0 +1,44 @@
+sku,name,category,unit_cost_cents
+SODA-001,Cola 12oz,beverage,45
+SODA-002,Lemon-Lime 12oz,beverage,45
+SODA-003,Root Beer 12oz,beverage,48
+SODA-004,Cream Soda 12oz,beverage,48
+SODA-005,Diet Cola 12oz,beverage,45
+WATER-001,Bottled Water 16.9oz,beverage,25
+WATER-002,Sparkling Water 12oz,beverage,40
+JUICE-001,Apple Juice 10oz,beverage,55
+JUICE-002,Orange Juice 10oz,beverage,55
+JUICE-003,Cranberry Juice 10oz,beverage,60
+ENERGY-001,Energy Drink 16oz,beverage,175
+ENERGY-002,Sugar-Free Energy 16oz,beverage,175
+ENERGY-003,Energy Shot 2oz,beverage,225
+TEA-001,Iced Tea Unsweetened 16.9oz,beverage,65
+TEA-002,Sweet Tea 16.9oz,beverage,65
+COFFEE-001,Bottled Cold Brew 11oz,beverage,225
+CHIP-001,Salted Chips 1oz,snack,38
+CHIP-002,BBQ Chips 1oz,snack,38
+CHIP-003,Cheese Puffs 1.25oz,snack,42
+CHIP-004,Sour Cream and Onion Chips 1oz,snack,38
+CHIP-005,Spicy Chips 1oz,snack,40
+PRETZEL-001,Mini Pretzels 1.5oz,snack,32
+POPCORN-001,Lightly Salted Popcorn 1oz,snack,45
+COOKIE-001,Chocolate Chip Cookies 1.5oz,snack,55
+COOKIE-002,Vanilla Sandwich Cookies 1.5oz,snack,55
+CRACKER-001,Peanut Butter Crackers 1.5oz,snack,40
+CRACKER-002,Cheese Crackers 1.5oz,snack,40
+CANDY-001,Chocolate Bar,candy,75
+CANDY-002,Peanut Bar,candy,75
+CANDY-003,Fruit Chews,candy,65
+CANDY-004,Caramel Bar,candy,70
+CANDY-005,Wafer Bar,candy,60
+CANDY-006,Dark Chocolate Bar,candy,90
+GUM-001,Sugar-Free Gum 5pc,candy,40
+GUM-002,Mint Gum 10pc,candy,55
+MINT-001,Peppermint Tin,candy,75
+NUT-001,Mixed Nuts 1.5oz,snack,95
+NUT-002,Peanuts 1.5oz,snack,55
+NUT-003,Almonds 1.5oz,snack,110
+BAR-001,Granola Bar,snack,65
+BAR-002,Protein Bar Chocolate,snack,150
+BAR-003,Protein Bar Peanut Butter,snack,150
+BAR-004,Fruit and Nut Bar,snack,95
