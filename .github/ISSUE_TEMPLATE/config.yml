@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Read the docs first
-    url: https://github.com/openvend/openvend/tree/main/docs
+    url: https://github.com/charlesonogwu/Open-MDB/tree/main/docs
     about: Most setup and troubleshooting questions are answered in docs/01 through docs/10.
   - name: Security disclosures
-    url: https://github.com/openvend/openvend/blob/main/CONTRIBUTING.md#security-issues
+    url: https://github.com/charlesonogwu/Open-MDB/blob/main/CONTRIBUTING.md#security-issues
     about: For security issues (credential leaks, RLS bypasses), email the maintainer privately instead of opening a public issue.

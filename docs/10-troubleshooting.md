@@ -22,7 +22,7 @@ Most issues fall into one of five buckets. Diagnose in this order.
 | Check | Command |
 |-------|---------|
 | Pi has internet | `ping 1.1.1.1` |
-| DNS works | `nslookup openvend-ingestor.<your-account>.workers.dev` |
+| DNS works | `nslookup open-mdb-ingestor.<your-account>.workers.dev` |
 | `INGEST_URL` correct | Check `.env` matches the URL Wrangler printed at deploy time |
 | `INGEST_SECRET` matches | Re-set on both Pi and Worker; mismatched values yield 401 responses |
 | HTTPS reachable | `curl https://<your-worker>.workers.dev/health` should return `{"ok":true}` |

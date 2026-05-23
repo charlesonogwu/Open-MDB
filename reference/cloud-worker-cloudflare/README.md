@@ -83,7 +83,7 @@ wrangler secret put INGEST_SECRET
 npm run deploy
 ```
 
-Wrangler prints the deployed URL — something like `https://openvend-ingestor.<your-account>.workers.dev`. Use that URL plus `/vends` as the `INGEST_URL` for each Pi listener.
+Wrangler prints the deployed URL — something like `https://open-mdb-ingestor.<your-account>.workers.dev`. Use that URL plus `/vends` as the `INGEST_URL` for each Pi listener.
 
 ## Free-tier capacity
 

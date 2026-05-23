@@ -1,5 +1,5 @@
 {
-  "name": "openvend-dashboard",
+  "name": "open-mdb-dashboard",
   "version": "0.1.0",
   "private": true,
   "description": "Open MDB reference dashboard — Next.js 14 App Router.",

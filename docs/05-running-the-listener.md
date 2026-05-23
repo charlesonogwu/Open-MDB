@@ -15,22 +15,22 @@ It does **not** maintain local state. Every event is fire-and-forget over HTTPS.
 
 ## Recommended Setup
 
-Run as a systemd service so it survives reboots, crashes, and SSH disconnects. See [`openvend-listener.service`](../reference/pi-listener-python/openvend-listener.service).
+Run as a systemd service so it survives reboots, crashes, and SSH disconnects. See [`open-mdb-listener.service`](../reference/pi-listener-python/open-mdb-listener.service).
 
 ## Monitoring
 
 ```bash
 # Tail logs live
-sudo journalctl -u openvend-listener -f
+sudo journalctl -u open-mdb-listener -f
 
 # Last 100 lines
-sudo journalctl -u openvend-listener -n 100
+sudo journalctl -u open-mdb-listener -n 100
 
 # Restart
-sudo systemctl restart openvend-listener
+sudo systemctl restart open-mdb-listener
 
 # Check status
-sudo systemctl status openvend-listener
+sudo systemctl status open-mdb-listener
 ```
 
 ## Health Checks

@@ -39,7 +39,7 @@ npm run deploy
 Wrangler prints the deployed URL, for example:
 
 ```
-https://openvend-ingestor.<your-account>.workers.dev
+https://open-mdb-ingestor.<your-account>.workers.dev
 ```
 
 Use that URL plus `/vends` as the `INGEST_URL` for each Pi listener. Use the same `INGEST_SECRET` value on every Pi.
@@ -72,7 +72,7 @@ After deploying, run the Pi listener in `--simulate` mode (see [`docs/05-running
 You can also test manually with `curl`:
 
 ```bash
-curl -X POST https://openvend-ingestor.<your-account>.workers.dev/vends \
+curl -X POST https://open-mdb-ingestor.<your-account>.workers.dev/vends \
   -H "Authorization: Bearer $INGEST_SECRET" \
   -H "Content-Type: application/json" \
   -d '{"machine_id":"MACHINE-001","selection":"24","ts":1716381342.1,"price_cents":150,"payment_type":"card"}'

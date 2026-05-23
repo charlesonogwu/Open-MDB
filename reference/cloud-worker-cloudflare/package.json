@@ -1,5 +1,5 @@
 {
-  "name": "openvend-ingestor",
+  "name": "open-mdb-ingestor",
   "version": "0.1.0",
   "private": true,
   "description": "Open MDB cloud ingestor — Cloudflare Worker reference implementation.",

@@ -9,7 +9,7 @@
    - **OS:** Raspberry Pi OS Lite (64-bit) — no desktop needed
    - **Storage:** your microSD card
 4. Click ⚙️ to pre-configure:
-   - Set hostname: `openvend-<machine-label>` (e.g., `openvend-office`)
+   - Set hostname: `open-mdb-<machine-label>` (e.g., `open-mdb-office`)
    - Enable SSH with password OR public-key authentication
    - Set Wi-Fi SSID and password
    - Set locale and timezone
@@ -22,7 +22,7 @@
 3. Power up
 4. SSH in from your laptop:
    ```bash
-   ssh <pi-username>@openvend-office.local
+   ssh <pi-username>@open-mdb-office.local
    ```
 
 ## Install Dependencies
@@ -48,8 +48,8 @@ ls -la /dev/ttyAMA0   # should exist
 ## Install the Listener
 
 ```bash
-git clone https://github.com/<your-fork>/openvend.git
-cd openvend/reference/pi-listener-python
+git clone https://github.com/<your-fork>/open-mdb.git
+cd open-mdb/reference/pi-listener-python
 
 python3 -m venv .venv
 source .venv/bin/activate
@@ -70,7 +70,7 @@ You'll need:
 ```bash
 MACHINE_ID=MACHINE-001
 SERIAL_DEVICE=/dev/ttyAMA0
-INGEST_URL=https://openvend-ingestor.<your-account>.workers.dev/vends
+INGEST_URL=https://open-mdb-ingestor.<your-account>.workers.dev/vends
 INGEST_SECRET=replace-with-the-same-value-you-set-on-the-worker
 ```
 
@@ -79,17 +79,17 @@ INGEST_SECRET=replace-with-the-same-value-you-set-on-the-worker
 ## Run the Listener as a System Service
 
 ```bash
-sudo cp openvend-listener.service /etc/systemd/system/
+sudo cp open-mdb-listener.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable openvend-listener
-sudo systemctl start openvend-listener
+sudo systemctl enable open-mdb-listener
+sudo systemctl start open-mdb-listener
 ```
 
 Check status:
 
 ```bash
-sudo systemctl status openvend-listener
-sudo journalctl -u openvend-listener -f
+sudo systemctl status open-mdb-listener
+sudo journalctl -u open-mdb-listener -f
 ```
 
 You should see startup logs and (after a test vend) parsed vend events.

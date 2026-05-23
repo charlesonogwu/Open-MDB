@@ -33,7 +33,7 @@ A clear, one-paragraph description of what's happening and what you expected to 
 ## Listener logs (last 50 lines)
 
 ```
-paste output of: sudo journalctl -u openvend-listener -n 50
+paste output of: sudo journalctl -u open-mdb-listener -n 50
 ```
 
 ## Worker logs (last 50 lines)

@@ -48,7 +48,7 @@ The schema is intentionally minimal — see [`supabase/001_initial_schema.sql`](
 2. VMC sends VEND APPROVED frame on MDB bus
 3. Qibixx HAT receives the frame, forwards over UART to the Pi
 4. Pi listener parses { machine_id, selection, price_cents, payment_type, ts }
-5. Pi POSTs the event to https://openvend-ingestor.<acct>.workers.dev/vends
+5. Pi POSTs the event to https://open-mdb-ingestor.<acct>.workers.dev/vends
 6. Worker validates the bearer token and payload
 7. Worker looks up the slot to snapshot the current product, then inserts into `vends`
 8. A trigger on `vends` decrements `slots.current_stock`

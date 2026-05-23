@@ -1,4 +1,4 @@
-name = "openvend-ingestor"
+name = "open-mdb-ingestor"
 main = "src/index.ts"
 compatibility_date = "2025-10-15"
 workers_dev = true
