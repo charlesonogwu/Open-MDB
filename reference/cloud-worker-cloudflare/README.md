@@ -1,6 +1,6 @@
-# OpenVend ingestor — Cloudflare Worker
+# Open MDB ingestor — Cloudflare Worker
 
-Reference implementation of the OpenVend cloud ingestor. Accepts vend events over HTTPS from one or more Raspberry Pi listeners and writes them to a Supabase Postgres database.
+Reference implementation of the Open MDB cloud ingestor. Accepts vend events over HTTPS from one or more Raspberry Pi listeners and writes them to a Supabase Postgres database.
 
 ## What it does
 

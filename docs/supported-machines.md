@@ -31,7 +31,7 @@ This list grows as the community reports compatibility. Add yours via PR.
 
 ## How to Add Your Machine
 
-1. Get OpenVend running on your machine
+1. Get Open MDB running on your machine
 2. Make at least 10 successful test vends and confirm they all show up in the dashboard
 3. Run `python main.py --log-level DEBUG` and capture a few raw frame hex strings
 4. Open a PR adding your machine to the "Verified Working" table above

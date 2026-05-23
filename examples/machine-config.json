@@ -1,5 +1,5 @@
 {
-  "_comment": "Example machine configuration for OpenVend. Fork and modify this file for your own machine, then INSERT the rows into your Supabase tables. Selection numbering follows AMS-style conventions (rows 1-2 even numbers only, rows 3+ consecutive). Adjust selections, capacities, and product assignments to match your actual machine layout.",
+  "_comment": "Example machine configuration for Open MDB. Fork and modify this file for your own machine, then INSERT the rows into your Supabase tables. Selection numbering follows AMS-style conventions (rows 1-2 even numbers only, rows 3+ consecutive). Adjust selections, capacities, and product assignments to match your actual machine layout.",
 
   "machine": {
     "id": "MACHINE-001",
@@ -40,7 +40,7 @@
   "_usage_notes": [
     "1. Pick a machine_id format you want to standardize on (MACHINE-001, OFFICE-MAIN, etc.) — see docs/09-adding-more-machines.md.",
     "2. Set the capacity for each coil to the maximum number of units that physically fit in that slot.",
-    "3. retail_price_cents is what the machine displays. The Pi listener reads the actual sale price from the MDB frame at vend time — if those drift apart, debug your machine's pricing menu, not OpenVend.",
+    "3. retail_price_cents is what the machine displays. The Pi listener reads the actual sale price from the MDB frame at vend time — if those drift apart, debug your machine's pricing menu, not Open MDB.",
     "4. Leave product_sku as null for empty slots — the dashboard will show them as 'unassigned'.",
     "5. For initial setup, generate INSERT statements with: jq -r '.slots[] | \"INSERT INTO slots (machine_id, selection, capacity, product_sku, retail_price_cents) VALUES (\\u0027MACHINE-001\\u0027, \\u0027\\(.selection)\\u0027, \\(.capacity), \\(if .product_sku then \"\\u0027\\(.product_sku)\\u0027\" else \"NULL\" end), \\(.retail_price_cents // \"NULL\"));\"' examples/machine-config.json"
   ]

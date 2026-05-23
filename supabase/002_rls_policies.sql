@@ -1,4 +1,4 @@
--- OpenVend — Row Level Security and Grants
+-- Open MDB — Row Level Security and Grants
 -- Apply after 001_initial_schema.sql.
 -- These grants are REQUIRED if you'll be on a Supabase project created after May 30, 2026
 -- (Supabase changed the default to "no implicit grants for tables in public").

@@ -1,12 +1,12 @@
 ---
 name: Machine compatibility report
-about: You got OpenVend working on a machine that isn't yet listed as verified
+about: You got Open MDB working on a machine that isn't yet listed as verified
 title: "[compat] "
 labels: compatibility
 assignees: ''
 ---
 
-Thanks for testing OpenVend on a new machine. This report helps the next operator with the same model.
+Thanks for testing Open MDB on a new machine. This report helps the next operator with the same model.
 
 ## Machine
 

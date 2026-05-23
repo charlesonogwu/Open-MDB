@@ -1,5 +1,5 @@
 [Unit]
-Description=OpenVend MDB vend listener
+Description=Open MDB MDB vend listener
 After=network-online.target
 Wants=network-online.target
 

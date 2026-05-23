@@ -60,9 +60,9 @@ A community PR adding this is very welcome.
 ## What You'll See in Logs
 
 ```
-2026-05-22 14:32:10 [openvend] opening serial device /dev/ttyAMA0 @ 9600 baud
-2026-05-22 14:32:10 [openvend] openvend listener running for MACHINE-001
-2026-05-22 14:35:42 [openvend] published vend: {"machine_id":"MACHINE-001","ts":1716381342.1,"selection":"24","price_cents":150,"payment_type":"card","raw_frame":"131800960a"}
+2026-05-22 14:32:10 [open-mdb] opening serial device /dev/ttyAMA0 @ 9600 baud
+2026-05-22 14:32:10 [open-mdb] open-mdb listener running for MACHINE-001
+2026-05-22 14:35:42 [open-mdb] published vend: {"machine_id":"MACHINE-001","ts":1716381342.1,"selection":"24","price_cents":150,"payment_type":"card","raw_frame":"131800960a"}
 ```
 
 ## Next Step

@@ -1,4 +1,4 @@
--- OpenVend — Optional: allow the dashboard's anon role to edit slot inventory.
+-- Open MDB — Optional: allow the dashboard's anon role to edit slot inventory.
 -- Apply ONLY if you intend to use the reference dashboard's inventory editor
 -- without setting up Supabase Auth.
 --

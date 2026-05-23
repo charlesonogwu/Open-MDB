@@ -31,7 +31,7 @@ If the machine already has an old card reader you want to remove:
 
 Disconnect the old reader. Connect the Qibixx HAT to the same MDB harness it was using.
 
-### Pattern B — Add OpenVend alongside existing reader (recommended for non-destructive setup)
+### Pattern B — Add Open MDB alongside existing reader (recommended for non-destructive setup)
 
 ```
 [VMC] ─── MDB ─── [Coin Mech] ─── [Bill Validator] ─── [Existing Reader] ─── [Qibixx HAT]
@@ -39,7 +39,7 @@ Disconnect the old reader. Connect the Qibixx HAT to the same MDB harness it was
 
 Daisy-chain a Y-cable so both the existing reader AND the Qibixx HAT are on the bus. The Qibixx is configured at a different MDB address from the existing reader (typically `0x60` instead of `0x10`).
 
-This is the safer option if you want to keep collecting card payments via your existing vendor (Cantaloupe / Nayax / etc.) while ALSO running OpenVend for telemetry.
+This is the safer option if you want to keep collecting card payments via your existing vendor (Cantaloupe / Nayax / etc.) while ALSO running Open MDB for telemetry.
 
 ## Step-by-Step (Pattern B)
 
@@ -63,7 +63,7 @@ Once the listener is running, perform a test vend:
 2. Press a selection
 3. Within 1-2 seconds, the listener log should show a parsed vend event:
    ```
-   [openvend] vend: { machine_id: MACHINE-001, selection: '24', price_cents: 150, payment_type: 'card', ts: ... }
+   [open-mdb] vend: { machine_id: MACHINE-001, selection: '24', price_cents: 150, payment_type: 'card', ts: ... }
    ```
 4. Refresh the dashboard. The vend should appear in the live feed.
 
@@ -73,7 +73,7 @@ If no event fires, see [`docs/10-troubleshooting.md`](10-troubleshooting.md).
 
 Some very old machines (pre-1995) use proprietary serial protocols, not MDB. Some very new "smart vending" machines use only the manufacturer's proprietary cloud API instead of MDB.
 
-OpenVend is **MDB-only by design**. If your machine doesn't have an MDB bus, this project is not for you. Consider:
+Open MDB is **MDB-only by design**. If your machine doesn't have an MDB bus, this project is not for you. Consider:
 - Adding an MDB-compatible coin mech / bill validator (turns most pre-MDB machines into MDB machines)
 - Or using the manufacturer's own platform if you can stomach the monthly fee
 

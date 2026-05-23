@@ -1,6 +1,6 @@
 # Architecture
 
-OpenVend is a four-layer system. Each layer is replaceable.
+Open MDB is a four-layer system. Each layer is replaceable.
 
 ## Layer 1 — Hardware (per machine)
 

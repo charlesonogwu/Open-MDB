@@ -2,7 +2,7 @@
   "name": "openvend-ingestor",
   "version": "0.1.0",
   "private": true,
-  "description": "OpenVend cloud ingestor — Cloudflare Worker reference implementation.",
+  "description": "Open MDB cloud ingestor — Cloudflare Worker reference implementation.",
   "license": "MIT",
   "type": "module",
   "scripts": {

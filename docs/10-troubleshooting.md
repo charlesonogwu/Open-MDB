@@ -62,7 +62,7 @@ This is almost always a frame parser mismatch. The Qibixx HAT firmware version a
 2. Look at the raw hex of a vend frame
 3. Compare to [`docs/mdb-protocol-reference.md`](mdb-protocol-reference.md)
 4. Adjust `parse_mdb_vend()` in `main.py` accordingly
-5. Open an issue in the OpenVend repo with the raw hex and your machine model — we'll add a parser variant
+5. Open an issue in the Open MDB repo with the raw hex and your machine model — we'll add a parser variant
 
 ## Bucket 6 — Supabase project got auto-paused
 

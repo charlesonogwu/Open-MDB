@@ -1,4 +1,4 @@
--- OpenVend — Demo seed data
+-- Open MDB — Demo seed data
 -- Loads a fictional operator "Acme Vending Co." with 3 demo machines, 12 products,
 -- and a realistic slot layout. Run on a fresh schema to see the dashboard come alive.
 

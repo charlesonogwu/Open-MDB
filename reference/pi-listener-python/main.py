@@ -1,8 +1,8 @@
 """
-OpenVend - MDB vend listener (reference implementation, Python)
+Open MDB - MDB vend listener (reference implementation, Python)
 
 Reads vend events from an MDB-compliant traditional vending machine
-via the Qibixx MDB Pi HAT, then POSTs them to the OpenVend cloud
+via the Qibixx MDB Pi HAT, then POSTs them to the Open MDB cloud
 ingestor (a Cloudflare Worker) over HTTPS.
 
 This is a REFERENCE implementation. Fork and adapt to your environment.
@@ -24,7 +24,7 @@ import requests
 import serial
 
 
-log = logging.getLogger("openvend")
+log = logging.getLogger("open-mdb")
 
 
 # ---------------------------------------------------------------------------
@@ -96,7 +96,7 @@ def parse_mdb_vend(frame: bytes) -> Optional[VendEvent]:
 
 def publish_vend(event: VendEvent) -> None:
     """
-    POST a vend event to the OpenVend ingestor.
+    POST a vend event to the Open MDB ingestor.
 
     A failed publish is logged and dropped. This reference implementation
     does not buffer locally — adding an SQLite WAL is a recommended
@@ -128,7 +128,7 @@ def run_listener() -> None:
     log.info("opening serial device %s @ %d baud", SERIAL_DEVICE, BAUD)
     ser = serial.Serial(SERIAL_DEVICE, BAUD, timeout=1)
 
-    log.info("openvend listener running for %s", MACHINE_ID)
+    log.info("open-mdb listener running for %s", MACHINE_ID)
     while True:
         raw = ser.read(64)
         if not raw:
@@ -152,7 +152,7 @@ def run_simulator() -> None:
     selections   = ["10", "12", "14", "20", "22", "30", "32", "40", "42", "44"]
     prices_cents = [100, 125, 150, 200, 350]
 
-    log.info("openvend simulator running for %s — Ctrl-C to stop", MACHINE_ID)
+    log.info("open-mdb simulator running for %s — Ctrl-C to stop", MACHINE_ID)
     while True:
         event = VendEvent(
             machine_id=MACHINE_ID,

@@ -1,6 +1,6 @@
-# Contributing to OpenVend
+# Contributing to Open MDB
 
-Thanks for your interest. OpenVend is a community-driven project for traditional vending machine operators.
+Thanks for your interest. Open MDB is a community-driven project for traditional vending machine operators.
 
 ## Most Wanted Contributions
 

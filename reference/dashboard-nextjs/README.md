@@ -1,6 +1,6 @@
-# OpenVend dashboard — Next.js
+# Open MDB dashboard — Next.js
 
-Reference implementation of the OpenVend operator dashboard. Reads from Supabase via the anon key, displays live vend events, summarizes revenue and top sellers, and exposes a per-machine inventory editor.
+Reference implementation of the Open MDB operator dashboard. Reads from Supabase via the anon key, displays live vend events, summarizes revenue and top sellers, and exposes a per-machine inventory editor.
 
 ## Pages
 

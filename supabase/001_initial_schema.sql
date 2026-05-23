@@ -1,4 +1,4 @@
--- OpenVend — Initial Schema
+-- Open MDB — Initial Schema
 -- Apply this in the Supabase SQL Editor on a fresh project.
 
 -- =========================================================================

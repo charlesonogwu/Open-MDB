@@ -1,6 +1,6 @@
 # 02 — Understanding MDB
 
-You don't need to be a protocol engineer to use OpenVend, but understanding **what MDB is** makes everything else click.
+You don't need to be a protocol engineer to use Open MDB, but understanding **what MDB is** makes everything else click.
 
 ## What MDB Is
 
@@ -10,11 +10,11 @@ You don't need to be a protocol engineer to use OpenVend, but understanding **wh
 - Bill validator (accepts cash)
 - Cashless reader (card readers, contactless, app payments)
 - Energy management modules
-- Telemetry units (this is what OpenVend pretends to be)
+- Telemetry units (this is what Open MDB pretends to be)
 
 It's maintained by NAMA (National Automatic Merchandising Association). The current spec is **MDB v4.3**.
 
-## Why It Matters for OpenVend
+## Why It Matters for Open MDB
 
 MDB is **the universal language** of traditional vending machines from the last 25 years. AMS, Crane, Dixie-Narco, Vendo, Royal, National — they all speak it. If a machine has a coin mech or a card reader installed, it has an MDB bus.
 
@@ -32,7 +32,7 @@ When a customer makes a purchase:
 4. VMC dispenses
 5. VMC tells us: "Vend complete."
 
-That **VEND APPROVED → VEND COMPLETE** conversation is what OpenVend listens for and logs.
+That **VEND APPROVED → VEND COMPLETE** conversation is what Open MDB listens for and logs.
 
 ## What "Cashless Peripheral" Means
 
@@ -40,7 +40,7 @@ The Qibixx HAT can be set to behave as a cashless reader (MDB device address `0x
 
 We **don't replace** the machine's existing card reader if one is present. Instead:
 
-- **Option A (preferred):** Replace the existing reader entirely with OpenVend. The Pi handles both payments and telemetry.
+- **Option A (preferred):** Replace the existing reader entirely with Open MDB. The Pi handles both payments and telemetry.
 - **Option B (simpler):** Run the Pi as a *second* cashless device on the bus alongside the existing reader. We can listen to vend events even without processing payments.
 
 This project's reference implementation uses **Option B (listen-only)** because it's:
@@ -59,7 +59,7 @@ If you've seen "MDB-to-USB" cables on eBay — most of them fudge the 9-bit fram
 
 ## What MDB Tells Us (and Doesn't)
 
-OpenVend can reliably observe:
+Open MDB can reliably observe:
 
 - ✅ Vend approved (selection + price)
 - ✅ Vend complete (success/failure)
@@ -79,7 +79,7 @@ Building those gaps yourself is the whole point of having your own database unde
 
 - NAMA MDB specification: search "MDB-ICP 4.3" — official spec PDF
 - Qibixx documentation: https://qibixx.com/docs
-- OpenVend's [`docs/mdb-protocol-reference.md`](mdb-protocol-reference.md) — frame byte layout cheat sheet
+- Open MDB's [`docs/mdb-protocol-reference.md`](mdb-protocol-reference.md) — frame byte layout cheat sheet
 
 ## Next Step
 

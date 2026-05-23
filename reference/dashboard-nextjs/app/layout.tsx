@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'OpenVend',
+  title: 'Open MDB',
   description: 'Vending fleet dashboard',
 };
 
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="border-b border-slate-200 bg-white">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
             <Link href="/" className="font-semibold tracking-tight">
-              OpenVend
+              Open MDB
             </Link>
             <span className="text-xs text-slate-500">Reference dashboard</span>
           </div>

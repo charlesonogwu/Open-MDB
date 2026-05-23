@@ -29,7 +29,7 @@ A working programmer's cheat sheet. For the authoritative spec, get the **NAMA M
 | 0x40 | Coin mechanism |
 | 0x60 | Cashless device #2 (newer spec — allows two cashless devices coexisting) |
 
-OpenVend listens at `0x10` or `0x60` depending on whether another cashless device is already present.
+Open MDB listens at `0x10` or `0x60` depending on whether another cashless device is already present.
 
 ## Address Byte vs Data Byte
 
@@ -59,7 +59,7 @@ Cashless → VMC: ACK or response data
 6. Cashless → VMC: ACK
 ```
 
-The interesting events for OpenVend are:
+The interesting events for Open MDB are:
 - **VEND REQUEST** (step 2) — tells us a vend is *about* to happen
 - **VEND SUCCESS** (step 5) — tells us it actually happened
 

@@ -1,8 +1,8 @@
-# OpenVend
+# Open MDB
 
 **Track any traditional MDB vending machine with a Raspberry Pi.**
 
-OpenVend is an open-source telemetry stack for MDB-compliant traditional vending machines — AMS, Crane, Dixie-Narco, Vendo, Royal, National, and others. Built around the Raspberry Pi and the Qibixx MDB Pi HAT. No vendor cloud, no monthly fees, no protocol lock-in.
+Open MDB is an open-source telemetry stack for MDB-compliant traditional vending machines — AMS, Crane, Dixie-Narco, Vendo, Royal, National, and others. Built around the Raspberry Pi and the Qibixx MDB Pi HAT. No vendor cloud, no monthly fees, no protocol lock-in.
 
 ---
 
@@ -93,14 +93,6 @@ Full architecture: [`ARCHITECTURE.md`](ARCHITECTURE.md)
 ### Reference
 - [MDB Protocol Reference](docs/mdb-protocol-reference.md)
 - [Supported Machines](docs/supported-machines.md)
-
----
-
-## Demo
-
-Live read-only demo dashboard: `https://demo.openvend.dev` *(coming soon)*
-
-Seed data represents "Acme Vending Co." — a fictional operator with three demo machines.
 
 ---
 
