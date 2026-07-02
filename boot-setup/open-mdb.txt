@@ -1,0 +1,17 @@
+# Open MDB settings — edit the three values below, keep the format as-is.
+# This file goes on the SD card's boot drive next to firstrun-openmdb.sh.
+# See docs/04a-setup-without-terminal.md for the full walkthrough.
+
+# A short name for this machine. It appears on your dashboard.
+# Letters, numbers, and dashes only.
+MACHINE_ID=OFFICE-1
+
+# The web address of your cloud ingestor. You got this when you deployed
+# the Cloudflare Worker (docs/07). It ends in /vends
+INGEST_URL=https://open-mdb-ingestor.YOUR-ACCOUNT.workers.dev/vends
+
+# The secret you set on the Worker. Must match exactly.
+INGEST_SECRET=paste-your-secret-here
+
+# Leave this alone unless docs/10-troubleshooting.md tells you otherwise.
+SERIAL_DEVICE=/dev/ttyAMA0
