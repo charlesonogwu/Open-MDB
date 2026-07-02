@@ -4,6 +4,13 @@
 
 Open MDB is an open-source telemetry stack for MDB-compliant traditional vending machines — AMS, Crane, Dixie-Narco, Vendo, Royal, National, and others. Built around the Raspberry Pi and the Qibixx MDB Pi HAT. No vendor cloud, no monthly fees, no protocol lock-in.
 
+> **New to this kind of project?** If "MDB", "flash an SD card", or "terminal"
+> aren't words you use every day, start with
+> [**docs/00-start-here.md**](docs/00-start-here.md) — a plain-English guide
+> with a glossary and FAQ. No coding is required anywhere in this project.
+
+**See it in action:** [dashboard walkthrough videos](docs/media/README.md) — a real fleet's live vends, inventory, and revenue.
+
 ---
 
 ## What You Get
@@ -64,11 +71,14 @@ Full architecture: [`ARCHITECTURE.md`](ARCHITECTURE.md)
 
 ## Quick Start (30 minutes)
 
+> Not sure yet? [Test-drive the whole system free](docs/00b-test-drive.md) —
+> a simulator on your laptop plays the part of the machine, no hardware needed.
+
 1. **Order hardware** — see BOM above
 2. **Deploy the database** — paste `supabase/001_initial_schema.sql` into a free Supabase project ([`docs/06-supabase-schema.md`](docs/06-supabase-schema.md))
-3. **Deploy the cloud ingestor** — `wrangler deploy` to Cloudflare ([`docs/07-cloud-ingestion.md`](docs/07-cloud-ingestion.md))
-4. **Deploy the dashboard** — one-click to Vercel ([`docs/08-dashboard-quickstart.md`](docs/08-dashboard-quickstart.md))
-5. **Set up the Pi** — flash, install dependencies, run listener ([`docs/04-raspberry-pi-setup.md`](docs/04-raspberry-pi-setup.md))
+3. **Deploy the cloud ingestor** — `wrangler deploy` to Cloudflare, or the one-click button (see doc) ([`docs/07-cloud-ingestion.md`](docs/07-cloud-ingestion.md))
+4. **Deploy the dashboard** — run locally or one-click to Vercel (see doc) ([`docs/08-dashboard-quickstart.md`](docs/08-dashboard-quickstart.md))
+5. **Set up the Pi** — flash the SD card, install the listener; there's an install script and a no-terminal option ([`docs/04-raspberry-pi-setup.md`](docs/04-raspberry-pi-setup.md))
 6. **Wire it to the machine** — MDB harness connection ([`docs/03-wiring-the-machine.md`](docs/03-wiring-the-machine.md))
 7. **Make a vend** — see it show up on the dashboard live
 
@@ -76,11 +86,17 @@ Full architecture: [`ARCHITECTURE.md`](ARCHITECTURE.md)
 
 ## Documentation
 
+### Getting Started
+- [00 — Start Here (plain-English guide)](docs/00-start-here.md)
+- [00b — Test-Drive It Free (no hardware needed)](docs/00b-test-drive.md)
+
 ### Hardware
 - [01 — Bill of Materials](docs/01-bill-of-materials.md)
 - [02 — Understanding MDB Protocol](docs/02-understanding-mdb.md)
 - [03 — Wiring the Machine](docs/03-wiring-the-machine.md)
+- [03a — Wiring Day Checklist (printable)](docs/03a-wiring-checklist.md)
 - [04 — Raspberry Pi Setup](docs/04-raspberry-pi-setup.md)
+- [04a — Pi Setup Without a Terminal (beta)](docs/04a-setup-without-terminal.md)
 
 ### Software
 - [05 — Running the Listener](docs/05-running-the-listener.md)

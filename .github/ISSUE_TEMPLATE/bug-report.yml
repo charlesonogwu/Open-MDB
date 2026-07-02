@@ -1,0 +1,30 @@
+name: "🐛 Bug report"
+description: "Something in the code or docs is wrong (you know roughly what and where)."
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - "Pi listener (Python)"
+        - "Cloud worker (Cloudflare)"
+        - "Dashboard (Next.js)"
+        - "Supabase schema / SQL"
+        - "Install scripts / first-boot setup"
+        - "Docs"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong?
+      description: "What happens, what should happen, and how to reproduce it."
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / output
+      render: shell

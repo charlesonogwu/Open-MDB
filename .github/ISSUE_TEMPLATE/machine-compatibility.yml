@@ -1,0 +1,40 @@
+name: "🥤 Machine compatibility report"
+description: "Tell us a machine model works (or doesn't) so we can update the supported list."
+title: "[compat] "
+labels: ["compatibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        These reports directly grow [supported-machines.md](../blob/main/docs/supported-machines.md) —
+        thank you! Works or not, both outcomes are useful.
+  - type: input
+    id: machine
+    attributes:
+      label: Machine make and model
+      placeholder: "Dixie-Narco 5000"
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Result
+      options:
+        - "✅ Works — vends show up correctly"
+        - "🟡 Partially — vends arrive but something's off"
+        - "❌ Doesn't work"
+    validations:
+      required: true
+  - type: dropdown
+    id: pattern
+    attributes:
+      label: Wiring pattern used
+      options:
+        - "Pattern A — replaced the old cashless reader"
+        - "Pattern B — Y-cable alongside existing reader"
+        - "Other / not sure"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      placeholder: "Anything the next person with this machine should know — connector location, quirks, firmware versions, a raw MDB frame if something was off."

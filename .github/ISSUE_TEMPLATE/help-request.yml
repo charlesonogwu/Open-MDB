@@ -1,0 +1,51 @@
+name: "🙋 Help — I'm stuck"
+description: "Setup isn't working and you're not sure why. No question is too basic."
+title: "[help] "
+labels: ["help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for asking — confusing docs are a bug we want to fix, so this helps everyone.
+        Two quick things first: the [troubleshooting flowchart](../blob/main/docs/10-troubleshooting.md)
+        solves most cases in a few questions, and error messages pasted as **text** beat screenshots.
+  - type: dropdown
+    id: step
+    attributes:
+      label: Which step were you on?
+      options:
+        - "00b — Test-drive / simulator"
+        - "06 — Supabase database"
+        - "07 — Cloudflare ingestor"
+        - "08 — Dashboard"
+        - "04 — Pi setup (terminal)"
+        - "04a — Pi setup (no-terminal / first-boot)"
+        - "03 — Wiring the machine"
+        - "Something else / not sure"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: "The vend should have appeared on the dashboard."
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened?
+      placeholder: "Nothing showed up. The listener log said..."
+    validations:
+      required: true
+  - type: textarea
+    id: errors
+    attributes:
+      label: Error messages or logs (paste as text)
+      description: "Pi: `sudo journalctl -u open-mdb-listener -n 50` · No-terminal setup: contents of open-mdb-setup.log from the SD card · Worker: `wrangler tail`"
+      render: shell
+  - type: input
+    id: hardware
+    attributes:
+      label: Hardware (if relevant)
+      placeholder: "Pi 5 4GB, Qibixx MDB Pi HAT, AMS 39 Combo"

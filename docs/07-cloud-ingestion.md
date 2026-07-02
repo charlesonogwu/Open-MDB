@@ -12,13 +12,43 @@ This doc walks through the **Cloudflare Worker** reference implementation. An AW
 - Built-in TLS termination
 - Built-in cron triggers for the daily Supabase keep-alive
 
-## Prerequisites
+The **recommended path is Option B (wrangler CLI) below** — it's the one this
+project has actually run. The one-click button in Option A is provided for
+convenience but hasn't been verified end-to-end yet.
+
+## Deploy Option A — One Click (community testing wanted)
+
+> ⚠️ **Unverified.** This button and its parameters have not been tested
+> end-to-end against a real Cloudflare account. If you try it, please report
+> success or failure in a GitHub issue so we can promote or fix it. If it
+> misbehaves, use Option B — that path is known to work.
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2Fcharlesonogwu%2FOpen-MDB%2Ftree%2Fmain%2Freference%2Fcloud-worker-cloudflare)
+
+1. Click the button, sign in to (or create) your free Cloudflare account, and
+   follow the prompts — it copies the ingestor to your account and deploys it.
+2. Add the three secrets in the Cloudflare dashboard: **Workers & Pages →
+   your worker → Settings → Variables and Secrets → Add**, type
+   **Secret** for each:
+   - `SUPABASE_URL` — from Supabase **Settings → API** (looks like `https://xxxx.supabase.co`)
+   - `SUPABASE_SERVICE_ROLE_KEY` — same Supabase page, the `service_role` key
+   - `INGEST_SECRET` — invent a long random password (30+ characters); you'll
+     give the same value to the Pi later
+3. Your ingest URL is shown on the worker's overview page —
+   `https://<worker-name>.<your-account>.workers.dev`. Add `/vends` to the
+   end: that's the `INGEST_URL` for your Pis.
+4. Verify: open `https://<worker-name>.<your-account>.workers.dev/health` in
+   a browser — it should say `{"ok":true}`.
+
+## Deploy Option B — Terminal (wrangler CLI, recommended)
+
+### Prerequisites
 
 - A Cloudflare account (free)
 - `wrangler` CLI installed: `npm install -g wrangler`
 - Node.js 18+ (for `npm install` and tests)
 
-## Deploy
+### Deploy
 
 ```bash
 cd reference/cloud-worker-cloudflare

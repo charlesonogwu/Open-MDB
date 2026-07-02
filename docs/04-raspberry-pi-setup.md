@@ -1,5 +1,21 @@
 # 04 — Raspberry Pi Setup
 
+> **No terminal at all?** There's a beta flow (unverified on hardware —
+> testing wanted) where the Pi sets itself up on first boot, no SSH, no
+> commands: [04a — Setup Without a Terminal](04a-setup-without-terminal.md).
+
+> **Fast path (convenience script):** after "First Boot" below, most of this
+> page can be done with one command. The script mirrors the manual steps, but
+> if you'd rather see each step run, just follow the sections below instead.
+>
+> ```bash
+> curl -sSL https://raw.githubusercontent.com/charlesonogwu/Open-MDB/main/scripts/pi-install.sh | bash
+> ```
+>
+> It installs dependencies, enables the serial port, downloads the listener,
+> asks for your three settings, and installs the boot service. The sections
+> below do the same things by hand — useful for understanding or debugging.
+
 ## Flash the SD Card
 
 1. Download **Raspberry Pi Imager** from raspberrypi.com

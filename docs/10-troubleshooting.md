@@ -1,6 +1,26 @@
 # 10 — Troubleshooting
 
-Most issues fall into one of five buckets. Diagnose in this order.
+## Start Here: The Two-Minute Diagnosis
+
+Answer the questions top to bottom; each ends at the numbered bucket below
+that has your fix. (On the Pi, "the listener log" means:
+`sudo journalctl -u open-mdb-listener -f`)
+
+```mermaid
+flowchart TD
+    A[Bought something,\ndashboard didn't update] --> B{Dashboard has shown\nNOTHING for days?}
+    B -- yes --> P[Check Bucket 6:\nfree database may be paused]
+    B -- no --> C{Buy again while watching\nthe listener log.\nDoes a vend line appear?}
+    C -- "no vend line" --> D[Bucket 1:\nPi can't hear the machine]
+    C -- "line says 'unreachable'\nor 'rejected'" --> E[Bucket 2:\nPi can't reach the cloud]
+    C -- "vend line looks OK" --> F{Open Supabase table editor.\nDid a new row appear\nin the vends table?}
+    F -- no --> G[Bucket 3:\ncloud ingestor isn't filing events]
+    F -- yes --> H{Is the row's selection\nand price correct?}
+    H -- no --> I[Bucket 5:\nframe parser mismatch]
+    H -- yes --> J[Bucket 4:\ndashboard isn't reading the database]
+```
+
+Most issues fall into one of six buckets. Diagnose in this order.
 
 ## Bucket 1 — Pi can't read MDB
 

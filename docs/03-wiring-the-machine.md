@@ -1,5 +1,8 @@
 # 03 — Wiring the Machine
 
+> Going to the machine? Print [03a — Wiring Day Checklist](03a-wiring-checklist.md)
+> and take it with you.
+
 ⚠️ **Safety first.** Unplug the machine before opening it. The VMC and bill validator handle line voltage in places. The MDB bus itself is low voltage (24V DC) but mistakes can damage the VMC.
 
 ## What You're Connecting To
